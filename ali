@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# تغییر رمز روت
+echo "تغییر رمز روت به 09190063692..."
+echo "root:09190063692" | sudo chpasswd
+
+# تغییر پورت SSH به 8080
+echo "تغییر پورت SSH به 8080..."
+sudo sed -i 's/#Port 22/Port 8080/' /etc/ssh/sshd_config
+
+# راه‌اندازی مجدد سرویس SSH
+echo "راه‌اندازی مجدد سرویس SSH..."
+sudo systemctl restart sshd
+
+# اضافه کردن یوزرها
+echo "ایجاد یوزرها..."
+sudo useradd -s /sbin/nologin user1
+echo "user1:3639028" | sudo chpasswd
+
+sudo useradd -s /sbin/nologin user2
+echo "user2:30203020" | sudo chpasswd
+
+echo "تمام کارها انجام شد."
+exit 0
