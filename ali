@@ -24,7 +24,7 @@ sudo useradd -s /sbin/nologin user3
 echo "user3:3260" | sudo chpasswd
 
 sudo useradd -s /sbin/nologin user4
-echo "user3:506040" | sudo chpasswd
+echo "user4:506040" | sudo chpasswd
 
 echo "تمام کارها انجام شد."
 exit 0
